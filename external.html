@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2D Human Body</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f0f0f0;
+    }
+    .body {
+        position: relative;
+        width: 200px;
+        height: 400px;
+        background-color: #ffffff;
+        border: 2px solid #cccccc;
+        border-radius: 5px;
+        overflow: hidden;
+    }
+    .head,
+    .torso,
+    .left-arm,
+    .right-arm,
+    .left-leg,
+    .right-leg {
+        position: absolute;
+        cursor: pointer;
+    }
+    .head {
+        top: 0;
+        left: 70px;
+        width: 60px;
+        height: 60px;
+        background-color: #f0f0f0;
+        border: 1px solid #cccccc;
+        border-radius: 50%;
+    }
+    .torso {
+        top: 60px;
+        left: 90px;
+        width: 20px;
+        height: 120px;
+        background-color: #f0f0f0;
+        border: 1px solid #cccccc;
+    }
+    .left-arm {
+        top: 80px;
+        left: 50px;
+        width: 40px;
+        height: 20px;
+        background-color: #f0f0f0;
+        border: 1px solid #cccccc;
+    }
+    .right-arm {
+        top: 80px;
+        left: 110px;
+        width: 40px;
+        height: 20px;
+        background-color: #f0f0f0;
+        border: 1px solid #cccccc;
+    }
+    .left-leg {
+        top: 180px;
+        left: 85px;
+        width: 15px;
+        height: 100px;
+        background-color: #f0f0f0;
+        border: 1px solid #cccccc;
+    }
+    .right-leg {
+        top: 180px;
+        left: 100px;
+        width: 15px;
+        height: 100px;
+        background-color: #f0f0f0;
+        border: 1px solid #cccccc;
+    }
+    .selected {
+        background-color: #ffff00 !important;
+    }
+</style>
+</head>
+<body>
+<div class="body">
+    <div class="head" onclick="selectPart('head')"></div>
+    <div class="torso" onclick="selectPart('torso')"></div>
+    <div class="left-arm" onclick="selectPart('left-arm')"></div>
+    <div class="right-arm" onclick="selectPart('right-arm')"></div>
+    <div class="left-leg" onclick="selectPart('left-leg')"></div>
+    <div class="right-leg" onclick="selectPart('right-leg')"></div>
+</div>
+<div id="youtube-links"></div>
+<script>
+    function selectPart(part) {
+        var parts = document.querySelectorAll('.body > div');
+        parts.forEach(function(item) {
+            item.classList.remove('selected');
+        });
+        document.querySelector('.' + part).classList.add('selected');
+        getYouTubeLinks(part);
+    }
+
+    function getYouTubeLinks(part) {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                var youtubeLink = this.responseText;
+                if (youtubeLink) {
+                    window.open(youtubeLink, '_blank');
+                }
+            }
+        };
+        xhttp.open("GET", "/videos?body_part=" + part, true);
+        xhttp.send();
+    }
+</script>
+
+</body>
+</html>

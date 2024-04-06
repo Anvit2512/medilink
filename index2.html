@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagnosis and Precautions</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div id="logo">
+                <h1>Hospital</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#diagnosis">Diagnosis</a></li>
+                    
+                    <li><a href="internal.html">Internal</a></li>
+                    <li><a href="#precautions">Precautions</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <div id="diagnosis" class="section">
+            <h2>Diagnosis</h2>
+            <p>Enter symptoms:</p>
+            <textarea id="symptomsInput" rows="4" cols="50"></textarea>
+            <button onclick="diagnose()">Diagnose</button>
+            <div id="diagnosisResult"></div>
+        </div>
+        
+        <div id="precautions" class="section">
+            <h2>Precautions</h2>
+            <ul>
+                <li>Wash your hands frequently.</li>
+                <li>Wear a mask when in public places.</li>
+                <li>Maintain social distancing.</li>
+                <li>Cover your mouth and nose when sneezing or coughing.</li>
+                <li>Clean and disinfect frequently touched surfaces regularly.</li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Hospital. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

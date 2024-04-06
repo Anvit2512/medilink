@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title></title>
+    <style>
+        
+        header, footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .logo {
+            width: 100px; /* Adjust the size as needed */
+            height: auto;
+        }
+
+        .block {
+            display: inline-block;
+            margin: 50px;
+            padding: 30px;
+            background-color: #ccc;
+            color: #333;
+            cursor: pointer;
+            text-align: center;
+        }
+
+    .big-block {
+            display: block;
+            margin: 0 auto;
+            padding: 30px;
+            background-color: #666;
+            color: #fff;
+            cursor: pointer;
+            text-align: center;
+            width: 60%;
+        }
+        .big-block:hover {
+            background-color: #333;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<header>
+    <img src="image2.png" alt="image2" class="image2">
+    <h1>HEALTHCARE</h1>
+</header>
+
+<section>
+    <center>
+    <div class="block" onclick="window.location.href='internal.html';">
+        <h1>Internal Injury</h1>
+        <p>Example: Organ Damage...</p>
+    </div>
+
+    <div class="block" onclick="window.location.href='external.html';">
+        <h2>External Injury</h2>
+        <p>Example: Fracture...</p>
+    </div>
+</center>
+</section>
+
+<div class="big-block" onclick="navigateToPage()">
+    Click Here for More Information
+</div>
+
+<footer>
+    <div>Contact Details:</div>
+    <div>Email: example@example.com</div>
+    <div>Phone: +1234567890</div>
+</footer>
+
+</body>
+</html>
